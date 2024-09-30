@@ -27,6 +27,7 @@ for i in range(1000,1253):
         image = soup.find('div', attrs={"class":"col-lg-6 col-12"}).img["src"]
         dload.save(image,f'C:\python\pkmon_game\image\{i}.png')
 
+
 texts = []
 
 ## 1. 크롤링하는 site url을 requests.get('url')으로 설정
@@ -56,21 +57,3 @@ for i in range(1001,1253):
 
 df = pd.DataFrame(texts,columns=['Name'])
 df.to_csv('포켓몬이름.csv',encoding='utf-8',index=False)
-
-#html = requests.get('https://pokemonkorea.co.kr/pokedex/view/1')
-#if html.status_code == 200: #코드 응답이 정상이면 실행
-#    soup = bs(html.text, 'html.parser') # 3. bs html.parser의 text parser로 설정
-#    img = soup.find('div', attrs={"class":"col-lg-6 col-12"}).img["src"]
-#    dload.save(img,'1.png')
-
-
-
-#html = requests.get('https://pokemonkorea.co.kr/pokedex')
-#
-## 2. 데이터 받아오기
-#if html.status_code == 200: #코드 응답이 정상이면 실행
-#    # 2. bs html.parser의 text parser로 설정
-#    soup = bs(html.text, 'html.parser')
-#
-#    # 3. 미세먼지 정보가 있는 div 요소 추출
-#    dayconfirm = soup.find('span',"data1")
