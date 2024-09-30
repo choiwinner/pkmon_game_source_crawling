@@ -27,11 +27,6 @@ for i in range(1000,1253):
         image = soup.find('div', attrs={"class":"col-lg-6 col-12"}).img["src"]
         dload.save(image,f'C:\python\pkmon_game\image\{i}.png')
 
-def korean(x):
-    korean_pattern = re.compile('[가-힣]+')
-    text = korean_pattern.findall(x)
-    return text
-
 texts = []
 
 ## 1. 크롤링하는 site url을 requests.get('url')으로 설정
